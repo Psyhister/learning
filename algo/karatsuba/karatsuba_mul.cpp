@@ -45,6 +45,7 @@ int karatsuba_mul(const int x, const int y) {
 		c = y / power_ten(second_digits / 2);
 		d = y - c * power_ten(second_digits / 2);
 	}
+	std::cout << a << " " << b << " " << c << " " << d << std::endl;
 	int ac = karatsuba_mul(a, c), bd = karatsuba_mul(b, d),
 	    part_sum = karatsuba_mul(a + b, c + d) - ac - bd;
 	return ac * power_ten(first_digits) +
@@ -52,7 +53,7 @@ int karatsuba_mul(const int x, const int y) {
 }
 
 int main() {
-	std::cout << karatsuba_mul(1020, 3040) << std::endl;
-	std::cout << 1020 * 3040 << std::endl;
+	std::cout << karatsuba_mul(1020, 30430) << std::endl;
+	std::cout << 1020 * 30430 << std::endl;
 	return 0;
 }
