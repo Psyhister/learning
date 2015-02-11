@@ -1,5 +1,5 @@
-CXX = g++
 CXXFLAGS = -std=c++11
+KARATSUBADIR=karatsuba_mul
 
-karatsuba:
-	$(CXX) $(CXXFLAGS) karatsuba/karatsuba_mul.cpp -o bin/mul
+karatsuba: $(KARATSUBADIR)/karatsuba_mul.cpp
+	$(CXX) $(CXXFLAGS) $(KARATSUBADIR)/karatsuba_mul.cpp -o bin/mul
