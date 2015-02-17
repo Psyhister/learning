@@ -11,8 +11,10 @@ karatsuba: directories $(KARATSUBADIR)/karatsuba_mul.cpp
 	$(CXX) $(CXXFLAGS) $(KARATSUBADIR)/karatsuba_mul.cpp -o bin/mul
 mergesort: directories $(MERGEDIR)/merge_sort.cpp
 	$(CXX) $(CXXFLAGS) $(MERGEDIR)/merge_sort.cpp -o bin/merge
-mergesort_test: directories $(MERGEDIR)/merge_sort_test.cpp
-	$(CXX) $(CXXFLAGS) $(MERGEDIR)/merge_sort_test.cpp -o bin/test/merge -lgtest -lpthread
+mergesort_test: directories $(MERGEDIR)/merge_sort_test.cpp $(MERGEDIR)/array_downloader.cpp
+	$(CXX) $(CXXFLAGS) $(MERGEDIR)/merge_sort_test.cpp $(MERGEDIR)/array_downloader.cpp -o bin/test/merge -lgtest -lpthread -lcurl
+mergesort_big: directories $(MERGEDIR)/array_downloader.cpp $(MERGEDIR)/merge_sort_big.cpp
+	$(CXX) $(CXXFLAGS) $(MERGEDIR)/array_downloader.cpp $(MERGEDIR)/merge_sort_big.cpp -o bin/merge_big -lcurl
 
 directories:
 	mkdir -p bin

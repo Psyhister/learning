@@ -1,3 +1,4 @@
+#pragma once
 #include <deque>
 
 std::deque<int>  merge_sort(const std::deque<int> &arr) {
