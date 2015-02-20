@@ -15,6 +15,10 @@ mergesort_test: directories $(MERGEDIR)/merge_sort_test.cpp $(MERGEDIR)/array_do
 	$(CXX) $(CXXFLAGS) $(MERGEDIR)/merge_sort_test.cpp $(MERGEDIR)/array_downloader.cpp -o bin/test/merge -lgtest -lpthread -lcurl
 mergesort_big: directories $(MERGEDIR)/array_downloader.cpp $(MERGEDIR)/merge_sort_big.cpp
 	$(CXX) $(CXXFLAGS) $(MERGEDIR)/array_downloader.cpp $(MERGEDIR)/merge_sort_big.cpp -o bin/merge_big -lcurl
+inversions: directories $(MERGEDIR)/inversions.cpp
+	$(CXX) $(CXXFLAGS) $(MERGEDIR)/inversions.cpp -o bin/inversions
+inversions_big: directories $(MERGEDIR)/array_downloader.cpp $(MERGEDIR)/inversions_big.cpp
+	$(CXX) $(CXXFLAGS) $(MERGEDIR)/array_downloader.cpp $(MERGEDIR)/inversions_big.cpp -o bin/inversions_big -lcurl
 
 directories:
 	mkdir -p bin
